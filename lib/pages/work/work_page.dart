@@ -78,19 +78,24 @@ class _WorkPageState extends State<WorkPage> {
     List<SizedBox> routerChildrens = childrens.map((mapValue) {
       return SizedBox(
         height: 30,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SvgPicture.asset(
-              "static/svg/${mapValue["meta"]["icon"]}.svg",
-              height: 30,
-              color: Colors.black,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(mapValue["meta"]["title"])
-          ],
+        child: InkWell(
+          onTap: () {
+            print("点击了");
+          },
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SvgPicture.asset(
+                "static/svg/${mapValue["meta"]["icon"]}.svg",
+                height: 30,
+                color: Colors.black,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(mapValue["meta"]["title"])
+            ],
+          ),
         ),
       );
     }).toList();
