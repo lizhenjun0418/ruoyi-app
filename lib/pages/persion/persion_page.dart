@@ -26,6 +26,18 @@ class _PersionPageState extends State<PersionPage> {
     });
   }
 
+  void getUserInfo(path) {
+    getUserProfile().then(
+        (value) => {
+              if (value != null && value["code"] == 200)
+                {
+                  Get.toNamed(path, arguments: {"userInfo": value})
+                }
+            }, onError: (error) {
+      EasyLoading.showToast("系统繁忙");
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,16 +55,7 @@ class _PersionPageState extends State<PersionPage> {
                 child: InkWell(
                   onTap: (() {
                     print("点击了");
-                    getUserProfile().then(
-                        (value) => {
-                              if (value != null && value["code"] == 200)
-                                {
-                                  Get.toNamed(AppRouterConstant.persional,
-                                      arguments: {"userInfo": value})
-                                }
-                            }, onError: (error) {
-                      EasyLoading.showToast("系统繁忙");
-                    });
+                    getUserInfo(AppRouterConstant.persional);
                   }),
                   child: ListTile(
                     leading: ClipOval(
@@ -147,16 +150,16 @@ class _PersionPageState extends State<PersionPage> {
                         topLeft: Radius.circular(10.0),
                         topRight: Radius.circular(10.0))),
                 margin: const EdgeInsets.only(left: 5, right: 5),
-                child: const ListTile(
-                  leading: Icon(
+                child: ListTile(
+                  leading: const Icon(
                     Icons.perm_identity_outlined,
                     color: Colors.blue,
                   ),
-                  title: Text("编辑资料"),
-                  trailing: Icon(
-                    Icons.keyboard_arrow_right,
-                    // color: Colors.,
-                  ),
+                  title: const Text("编辑资料"),
+                  trailing: const Icon(Icons.keyboard_arrow_right),
+                  onTap: () {
+                    getUserInfo(AppRouterConstant.editUser);
+                  },
                 ),
               ),
               const SizedBox(

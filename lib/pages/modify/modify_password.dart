@@ -124,7 +124,6 @@ class _ModifyPaswordPageState extends State<ModifyPaswordPage> {
               height: 45,
               margin: const EdgeInsets.only(bottom: 10),
               child: Row(
-                // mainAxisSize: MainAxisSize.min,
                 children: [
                   const Expanded(
                     child: Text(

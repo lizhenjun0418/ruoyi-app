@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:ruoyi_app/router/app_router_constant.dart';
@@ -59,12 +60,15 @@ class _SettingPageState extends State<SettingPage> {
                 decoration: const BoxDecoration(
                   color: Colors.white,
                 ),
-                child: const ListTile(
-                  leading: Icon(Icons.update_outlined),
-                  title: Text("检查更新"),
-                  trailing: Icon(
+                child: ListTile(
+                  leading: const Icon(Icons.update_outlined),
+                  title: const Text("检查更新"),
+                  trailing: const Icon(
                     Icons.keyboard_arrow_right,
                   ),
+                  onTap: () {
+                    EasyLoading.showToast("模块建设中...");
+                  },
                 ),
               ),
               const SizedBox(
@@ -78,12 +82,15 @@ class _SettingPageState extends State<SettingPage> {
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(10.0),
                         bottomRight: Radius.circular(10.0))),
-                child: const ListTile(
-                  leading: Icon(Icons.cleaning_services_outlined),
-                  title: Text("清理缓存"),
-                  trailing: Icon(
+                child: ListTile(
+                  leading: const Icon(Icons.cleaning_services_outlined),
+                  title: const Text("清理缓存"),
+                  trailing: const Icon(
                     Icons.keyboard_arrow_right,
                   ),
+                  onTap: () {
+                    EasyLoading.showToast("模块建设中...");
+                  },
                 ),
               ),
               const SizedBox(
@@ -101,7 +108,6 @@ class _SettingPageState extends State<SettingPage> {
                     style: TextStyle(color: Colors.black),
                   ),
                   onPressed: () {
-                    print("点击登录了");
                     _logout();
                   },
                 ),

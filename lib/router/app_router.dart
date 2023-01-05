@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:ruoyi_app/pages/edit/index.dart';
 import 'package:ruoyi_app/pages/error/404.dart';
 import 'package:ruoyi_app/pages/login/login.dart';
 import 'package:ruoyi_app/pages/modify/modify_password.dart';
@@ -20,7 +21,8 @@ class AppRouterPage {
     GetPage(name: AppRouterConstant.settings, page: () => const SettingPage()),
     GetPage(
         name: AppRouterConstant.modifyPassword,
-        page: () => const ModifyPaswordPage())
+        page: () => const ModifyPaswordPage()),
+    GetPage(name: AppRouterConstant.editUser, page: () => const EditUserPage())
   ];
 
   /// 路由
@@ -31,6 +33,7 @@ class AppRouterPage {
     AppRouterConstant.persional: (context) => const PersionalPage(),
     AppRouterConstant.settings: (context) => const SettingPage(),
     AppRouterConstant.modifyPassword: (context) => const ModifyPaswordPage(),
+    AppRouterConstant.editUser: (context) => const EditUserPage()
   };
 
   ///路由拦截
