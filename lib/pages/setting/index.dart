@@ -39,12 +39,15 @@ class _SettingPageState extends State<SettingPage> {
                       topRight: Radius.circular(10.0)),
                   color: Colors.white,
                 ),
-                child: const ListTile(
-                  leading: Icon(Icons.lock_clock_outlined),
-                  title: Text("修改密码"),
-                  trailing: Icon(
+                child: ListTile(
+                  leading: const Icon(Icons.lock_clock_outlined),
+                  title: const Text("修改密码"),
+                  trailing: const Icon(
                     Icons.keyboard_arrow_right,
                   ),
+                  onTap: () {
+                    Get.toNamed(AppRouterConstant.modifyPassword);
+                  },
                 ),
               ),
               const SizedBox(

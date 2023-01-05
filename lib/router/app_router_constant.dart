@@ -14,4 +14,7 @@ class AppRouterConstant {
 
   /// 应用设置页面
   static const String settings = "/settings";
+
+  /// 修改密码
+  static const String modifyPassword = "/modify_password";
 }

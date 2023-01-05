@@ -7,3 +7,10 @@ var getUserProfile = () async {
   return await DioRequest.instance
       ?.request("/system/user/profile", true, method: DioMethod.get);
 };
+
+/// 修改密码
+var updatePassword = (dataForm) async {
+  return await DioRequest.instance?.request(
+      "/system/user/profile/updatePwd", true,
+      method: DioMethod.put, params: dataForm);
+};

@@ -3,6 +3,7 @@ import 'package:get/route_manager.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:ruoyi_app/pages/error/404.dart';
 import 'package:ruoyi_app/pages/login/login.dart';
+import 'package:ruoyi_app/pages/modify/modify_password.dart';
 import 'package:ruoyi_app/pages/page_index.dart';
 import 'package:ruoyi_app/pages/persion/persional_page.dart';
 import 'package:ruoyi_app/pages/setting/index.dart';
@@ -16,7 +17,10 @@ class AppRouterPage {
     GetPage(name: AppRouterConstant.error_404, page: () => const ErrorPage()),
     GetPage(
         name: AppRouterConstant.persional, page: () => const PersionalPage()),
-    GetPage(name: AppRouterConstant.settings, page: () => const SettingPage())
+    GetPage(name: AppRouterConstant.settings, page: () => const SettingPage()),
+    GetPage(
+        name: AppRouterConstant.modifyPassword,
+        page: () => const ModifyPaswordPage())
   ];
 
   /// 路由
@@ -25,7 +29,8 @@ class AppRouterPage {
     AppRouterConstant.login: (context) => const LoginPage(),
     AppRouterConstant.error_404: (context) => const ErrorPage(),
     AppRouterConstant.persional: (context) => const PersionalPage(),
-    AppRouterConstant.settings: (context) => const SettingPage()
+    AppRouterConstant.settings: (context) => const SettingPage(),
+    AppRouterConstant.modifyPassword: (context) => const ModifyPaswordPage(),
   };
 
   ///路由拦截
