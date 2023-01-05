@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
   void _initRouter() {
     GetStorage getStorage = GetStorage();
     String routerKey = getStorage.hasData("token")
-        ? AppRouterConstant.Home
-        : AppRouterConstant.Login;
+        ? AppRouterConstant.home
+        : AppRouterConstant.login;
     getStorage.write("initialRouteKey", routerKey);
   }
 

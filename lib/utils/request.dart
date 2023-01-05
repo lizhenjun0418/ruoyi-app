@@ -64,12 +64,12 @@ class DioRequest {
     if (code == 403) {
       SPUtil().clean();
       GetStorage().erase();
-      Get.toNamed(AppRouterConstant.Login);
+      Get.toNamed(AppRouterConstant.login);
     }
     if (code == 401) {
       SPUtil().clean();
       GetStorage().erase();
-      Get.offAll(AppRouterConstant.Login);
+      Get.offAll(AppRouterConstant.login);
     }
     handler.next(response);
   }
@@ -108,7 +108,7 @@ class DioRequest {
           // 没有token，跳抓登录页面
           getStorage.remove("token");
           SPUtil().remove("token");
-          Get.offNamed(AppRouterConstant.Login);
+          Get.offNamed(AppRouterConstant.login);
         }
       }
       print("token: ${getStorage.read("token")}");

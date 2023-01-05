@@ -3,7 +3,6 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import '../../api/login_api.dart';
 import '../../api/user_api.dart';
 import '../../router/app_router_constant.dart';
 
@@ -21,19 +20,11 @@ class _PersionPageState extends State<PersionPage> {
   void initState() {
     super.initState();
 
-    String nickName = GetStorage().read("userInfo")["user"]["nickName"];
+    String nickName = GetStorage().read("userInfo")["user"]["userName"];
     setState(() {
       username = nickName;
     });
   }
-
-  void getUserInfo = () async {
-    var result = await getInfo();
-    if (result != null && result["code"] == 200) {
-      Get.toNamed(AppRouterConstant.Persional,
-          arguments: {"args": result["data"]});
-    }
-  };
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +47,7 @@ class _PersionPageState extends State<PersionPage> {
                         (value) => {
                               if (value != null && value["code"] == 200)
                                 {
-                                  Get.toNamed(AppRouterConstant.Persional,
+                                  Get.toNamed(AppRouterConstant.persional,
                                       arguments: {"userInfo": value})
                                 }
                             }, onError: (error) {
@@ -224,16 +215,20 @@ class _PersionPageState extends State<PersionPage> {
                         bottomLeft: Radius.circular(10.0),
                         bottomRight: Radius.circular(10.0))),
                 margin: const EdgeInsets.only(left: 5, right: 5),
-                child: const ListTile(
-                  leading: Icon(
+                child: ListTile(
+                  leading: const Icon(
                     Icons.settings_outlined,
                     color: Colors.blue,
                   ),
-                  title: Text("应用设置"),
-                  trailing: Icon(
+                  title: const Text("应用设置"),
+                  trailing: const Icon(
                     Icons.keyboard_arrow_right,
                     // color: Colors.,
                   ),
+                  onTap: () {
+                    print("进来了");
+                    Get.toNamed(AppRouterConstant.settings);
+                  },
                 ),
               )
             ]),

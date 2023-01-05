@@ -5,24 +5,27 @@ import 'package:ruoyi_app/pages/error/404.dart';
 import 'package:ruoyi_app/pages/login/login.dart';
 import 'package:ruoyi_app/pages/page_index.dart';
 import 'package:ruoyi_app/pages/persion/persional_page.dart';
+import 'package:ruoyi_app/pages/setting/index.dart';
 import 'package:ruoyi_app/router/app_router_constant.dart';
 
 /// 路由
 class AppRouterPage {
   static final routers = [
-    GetPage(name: AppRouterConstant.Home, page: () => const PageIndex()),
-    GetPage(name: AppRouterConstant.Login, page: () => const LoginPage()),
-    GetPage(name: AppRouterConstant.Error_404, page: () => const ErrorPage()),
+    GetPage(name: AppRouterConstant.home, page: () => const PageIndex()),
+    GetPage(name: AppRouterConstant.login, page: () => const LoginPage()),
+    GetPage(name: AppRouterConstant.error_404, page: () => const ErrorPage()),
     GetPage(
-        name: AppRouterConstant.Persional, page: () => const PersionalPage())
+        name: AppRouterConstant.persional, page: () => const PersionalPage()),
+    GetPage(name: AppRouterConstant.settings, page: () => const SettingPage())
   ];
 
   /// 路由
   static final Map<String, WidgetBuilder> routerMaps = {
-    AppRouterConstant.Home: (context) => const PageIndex(),
-    AppRouterConstant.Login: (context) => const LoginPage(),
-    AppRouterConstant.Error_404: (context) => const ErrorPage(),
-    AppRouterConstant.Persional: (context) => const PersionalPage()
+    AppRouterConstant.home: (context) => const PageIndex(),
+    AppRouterConstant.login: (context) => const LoginPage(),
+    AppRouterConstant.error_404: (context) => const ErrorPage(),
+    AppRouterConstant.persional: (context) => const PersionalPage(),
+    AppRouterConstant.settings: (context) => const SettingPage()
   };
 
   ///路由拦截

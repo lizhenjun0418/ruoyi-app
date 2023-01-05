@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
         GetStorage().write("userInfo", getUserInfo);
       }
       EasyLoading.dismiss();
-      Get.toNamed(AppRouterConstant.Home);
+      Get.toNamed(AppRouterConstant.home);
     } else {
       setState(() {
         _getImages();
