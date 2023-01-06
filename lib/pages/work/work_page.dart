@@ -89,6 +89,7 @@ class _WorkPageState extends State<WorkPage> {
                 "static/svg/${mapValue["meta"]["icon"]}.svg",
                 height: 30,
                 color: Colors.black,
+                fit: BoxFit.contain,
               ),
               const SizedBox(
                 height: 10,

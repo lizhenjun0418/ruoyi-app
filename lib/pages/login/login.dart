@@ -89,9 +89,7 @@ class _LoginPageState extends State<LoginPage> {
       EasyLoading.dismiss();
       Get.toNamed(AppRouterConstant.home);
     } else {
-      setState(() {
-        _getImages();
-      });
+      _getImages();
       EasyLoading.dismiss();
       EasyLoading.showToast(loginResp["msg"]);
     }

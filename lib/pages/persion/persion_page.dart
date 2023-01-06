@@ -52,12 +52,7 @@ class _PersionPageState extends State<PersionPage> {
                 alignment: Alignment.center,
                 color: const Color.fromARGB(255, 12, 139, 242),
                 // padding: const EdgeInsets.only(left: 5, right: 5),
-                child: InkWell(
-                  onTap: (() {
-                    print("点击了");
-                    getUserInfo(AppRouterConstant.persional);
-                  }),
-                  child: ListTile(
+                child: ListTile(
                     leading: ClipOval(
                       child: Image.asset("static/images/profile.jpg"),
                     ),
@@ -68,19 +63,39 @@ class _PersionPageState extends State<PersionPage> {
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
-                    trailing: const Icon(
-                      Icons.keyboard_arrow_right,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+                    trailing: InkWell(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: const [
+                          Text(
+                            "个人信息",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          Icon(
+                            Icons.keyboard_arrow_right,
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
+                      onTap: () {
+                        getUserInfo(AppRouterConstant.persional);
+                      },
+                    )),
               ),
               Container(
                 height: 120,
                 margin: const EdgeInsets.only(left: 15, right: 15, top: 120),
                 decoration: const BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        offset: Offset(0.0, 5.0), //阴影xy轴偏移量
+                        blurRadius: 5.0, //阴影模糊程度
+                        spreadRadius: 1.0,
+                      ),
+                    ]),
                 child: GridView.count(
                   crossAxisCount: 4,
                   crossAxisSpacing: 10.0,
