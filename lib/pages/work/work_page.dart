@@ -131,8 +131,9 @@ class _WorkPageState extends State<WorkPage> {
               );
             },
             itemCount: imageList.length,
-            pagination: const SwiperPagination(),
-            control: const SwiperControl(),
+            pagination: const SwiperPagination(
+                builder: DotSwiperPaginationBuilder(activeColor: Colors.blue)),
+            control: const SwiperControl(padding: EdgeInsets.only(left: 10)),
             loop: true,
             autoplay: true,
           ),

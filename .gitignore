@@ -3,3 +3,6 @@ ruoyi_app.iml
 build/*
 .dart_tool/*
 .dart_tool/**
+/.dart_tool/
+/.vscode/
+/.idea/

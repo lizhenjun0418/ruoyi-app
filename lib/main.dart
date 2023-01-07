@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
       getPages: AppRouterPage.routers,
       onGenerateRoute: AppRouterPage.onGenerateRoute,
       builder: EasyLoading.init(),
+      unknownRoute: AppRouterPage.errorPage,
     );
   }
 }
