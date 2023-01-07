@@ -12,6 +12,9 @@ import 'package:ruoyi_app/router/app_router_constant.dart';
 
 /// 路由
 class AppRouterPage {
+  static final errorPage =
+      GetPage(name: AppRouterConstant.error_404, page: () => const ErrorPage());
+
   static final routers = [
     GetPage(name: AppRouterConstant.home, page: () => const PageIndex()),
     GetPage(name: AppRouterConstant.login, page: () => const LoginPage()),
